@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     MediaPlayer mpFiftyWays, mpSabotage, mpScream, mpSpread, mpTrouble;
     int playing;
+    int i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,12 +57,40 @@ public class MainActivity extends AppCompatActivity {
         playing = 0;
 
         final CheckBox chkFiftyWays = (CheckBox) findViewById(R.id.chkFiftyWays);
+        final CheckBox chkSabotage = (CheckBox) findViewById(R.id.chkSabotage);
+
+
 
         chkFiftyWays.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-            chkFiftyWays.setText("Hi Karen");
+                if (chkFiftyWays.isChecked()) {
+                    chkFiftyWays.setText("#" + i);
+                    i++;
+                } else {
+                    //.. if unchecked
+                    chkFiftyWays.setText("Not Ranked Yet");
+                    i = i - 1;
+                }
+
+
+            }
+        });
+
+        chkSabotage.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (chkSabotage.isChecked()) {
+                    chkSabotage.setText("#" + i);
+                    i++;
+                } else {
+                    //.. if unchecked
+                    chkSabotage.setText("Not Ranked Yet");
+                    i = i - 1;
+                }
+
 
             }
         });

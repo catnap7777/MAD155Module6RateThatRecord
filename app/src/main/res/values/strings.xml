@@ -24,13 +24,15 @@
     <string name="btnSpreadTooThin">Play</string>
     <string name="btnTroubleMaker">Play</string>
 
-    <string name="chkFiftyWays"></string>
-    <string name="chkSabotage"></string>
-    <string name="chkScreamAndShout"></string>
-    <string name="chkSpreadTooThin"></string>
-    <string name="chkTroubleMaker"></string>
+    <string name="chkFiftyWays">Not Ranked Yet</string>
+    <string name="chkSabotage">Not Ranked Yet</string>
+    <string name="chkScreamAndShout">Not Ranked Yet</string>
+    <string name="chkSpreadTooThin">Not Ranked Yet</string>
+    <string name="chkTroubleMaker">Not Ranked Yet</string>
 
     <string name="txt_play_music">Play Music</string>
+
+
 
 
 

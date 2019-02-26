@@ -7,12 +7,268 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/txtScreamAndShout"
+        android:layout_width="156dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/txtScreamAndShout"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgScream"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSabotage" />
+
+    <TextView
+        android:id="@+id/txtSpreadTooThin"
+        android:layout_width="156dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/txtSpreadTooThin"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgSpread"
+        app:layout_constraintTop_toBottomOf="@+id/buttonScream" />
+
+    <TextView
+        android:id="@+id/txtSabotage"
+        android:layout_width="156dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/txtSabotage"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgSabotage"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFiftyWays" />
+
+    <TextView
+        android:id="@+id/txtTitleRate"
+        android:layout_width="309dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:shadowColor="@color/colorAccent"
+        android:shadowDx="14"
+        android:shadowDy="14"
+        android:shadowRadius="14"
+        android:text="@string/txtTitleRate"
+        android:textAlignment="center"
+        android:textColor="#0000ff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="53dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/txtRateIt"
+        android:textAlignment="center"
+        android:textColor="#ff00ff"
+        android:textSize="12sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleRate" />
+
+    <ImageView
+        android:id="@+id/imgFiftyWays"
+        android:layout_width="82dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/imgFiftyWays"
+        android:cropToPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleRate"
+        app:srcCompat="@drawable/fifty_ways_to_say_goodbye" />
+
+    <ImageView
+        android:id="@+id/imgSabotage"
+        android:layout_width="78dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/imgSabotage"
+        android:cropToPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgFiftyWays"
+        app:srcCompat="@drawable/sabotage" />
+
+    <ImageView
+        android:id="@+id/imgSpread"
+        android:layout_width="78dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/imgSpreadTooThin"
+        android:cropToPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgScream"
+        app:srcCompat="@drawable/spread_too_thin" />
+
+    <ImageView
+        android:id="@+id/imgTrouble"
+        android:layout_width="78dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/imgScreamAndShout"
+        android:cropToPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgSpread"
+        app:srcCompat="@drawable/troublemaker" />
+
+    <ImageView
+        android:id="@+id/imgScream"
+        android:layout_width="78dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/imgScreamAndShout"
+        android:cropToPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgSabotage"
+        app:srcCompat="@drawable/scream_and_shout" />
+
+    <Button
+        android:id="@+id/buttonFiftyWays"
+        android:layout_width="80dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/btnFiftyWays"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgFiftyWays"
+        app:layout_constraintTop_toBottomOf="@+id/txtFiftyWays" />
+
+    <Button
+        android:id="@+id/buttonSabotage"
+        android:layout_width="80dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/btnSabotage"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgSabotage"
+        app:layout_constraintTop_toBottomOf="@+id/txtSabotage" />
+
+    <Button
+        android:id="@+id/buttonSpread"
+        android:layout_width="80dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/btnSpreadTooThin"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgSpread"
+        app:layout_constraintTop_toBottomOf="@+id/txtSpreadTooThin" />
+
+    <Button
+        android:id="@+id/buttonTrouble"
+        android:layout_width="80dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/btnTroubleMaker"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgTrouble"
+        app:layout_constraintTop_toBottomOf="@+id/txtTroublemaker" />
+
+    <Button
+        android:id="@+id/buttonScream"
+        android:layout_width="80dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/btnScreamAndShout"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgScream"
+        app:layout_constraintTop_toBottomOf="@+id/txtScreamAndShout" />
+
+    <TextView
+        android:id="@+id/txtTroublemaker"
+        android:layout_width="156dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/txtTroubleMaker"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgTrouble"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSpread" />
+
+    <TextView
+        android:id="@+id/txtFiftyWays"
+        android:layout_width="156dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/txtFiftyWays"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgFiftyWays"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleRate" />
+
+    <CheckBox
+        android:id="@+id/chkFiftyWays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/chkFiftyWays"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.771"
+        app:layout_constraintStart_toEndOf="@+id/buttonFiftyWays"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
 
 </android.support.constraint.ConstraintLayout>

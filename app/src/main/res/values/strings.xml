@@ -2,6 +2,38 @@
     <string name="app_name">MAD155Module6RateThatRecord</string>
 
     <string name="txtTitle1">Rate That Record</string>
+    <string name="imgDesc">Rate That Record Random Images</string>
+
+    <string name="txtTitleRate">Listen, Click, and Rank!</string>
+    <string name="txtRateIt">Click to Rank</string>
+    <string name="imgFiftyWays">Image for Fifty Ways to Say Goodbye Song</string>
+    <string name="imgSabotage">Image for Sabotage Song</string>
+    <string name="imgScreamAndShout">Image for Scream and Shout Song</string>
+    <string name="imgSpreadTooThin">Image for Spread Too Thin Song</string>
+    <string name="imgTroubleMaker">Image for Troublemaker Song</string>
+
+    <string name="txtFiftyWays">\tFifty Ways to Say Goodbye\n\t\t\t &#8764; Train</string>
+    <string name="txtSabotage">\tSabotage\n\t\t\t &#8764; Beastie Boys</string>
+    <string name="txtScreamAndShout">\tScream and Shout\n\t\t\t &#8764; Will.I.Am &amp; \n\t\t\tBritney Spears</string>
+    <string name="txtSpreadTooThin">\tSpread Too Thin\n\t\t\t &#8764; Dirty Heads</string>
+    <string name="txtTroubleMaker">\tTroublemaker\n\t\t\t &#8764; Olly Murs</string>
+
+    <string name="btnFiftyWays">Play</string>
+    <string name="btnSabotage">Play</string>
+    <string name="btnScreamAndShout">Play</string>
+    <string name="btnSpreadTooThin">Play</string>
+    <string name="btnTroubleMaker">Play</string>
+
+    <string name="chkFiftyWays"></string>
+    <string name="chkSabotage"></string>
+    <string name="chkScreamAndShout"></string>
+    <string name="chkSpreadTooThin"></string>
+    <string name="chkTroubleMaker"></string>
+
+    <string name="txt_play_music">Play Music</string>
+
+
+
 
 
 </resources>

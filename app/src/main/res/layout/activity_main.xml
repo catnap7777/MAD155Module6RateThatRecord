@@ -6,62 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <CheckBox
-        android:id="@+id/chkSabotage"
-        android:layout_width="112dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/chkSabotage"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/buttonSabotage"
-        app:layout_constraintTop_toBottomOf="@+id/chkFiftyWays" />
-
-    <TextView
-        android:id="@+id/txtScreamAndShout"
-        android:layout_width="156dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtScreamAndShout"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imgScream"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSabotage" />
-
-    <TextView
-        android:id="@+id/txtSpreadTooThin"
-        android:layout_width="156dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtSpreadTooThin"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imgSpread"
-        app:layout_constraintTop_toBottomOf="@+id/buttonScream" />
-
-    <TextView
-        android:id="@+id/txtSabotage"
-        android:layout_width="156dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtSabotage"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imgSabotage"
-        app:layout_constraintTop_toBottomOf="@+id/buttonFiftyWays" />
-
     <TextView
         android:id="@+id/txtTitleRate"
         android:layout_width="309dp"
@@ -180,10 +124,11 @@
 
     <Button
         android:id="@+id/buttonFiftyWays"
-        android:layout_width="80dp"
-        android:layout_height="33dp"
+        android:layout_width="82dp"
+        android:layout_height="76dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:background="@drawable/fifty_ways_to_say_goodbye"
         android:text="@string/btnFiftyWays"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -244,20 +189,6 @@
         app:layout_constraintTop_toBottomOf="@+id/txtScreamAndShout" />
 
     <TextView
-        android:id="@+id/txtTroublemaker"
-        android:layout_width="156dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtTroubleMaker"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imgTrouble"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSpread" />
-
-    <TextView
         android:id="@+id/txtFiftyWays"
         android:layout_width="156dp"
         android:layout_height="23dp"
@@ -271,19 +202,154 @@
         app:layout_constraintStart_toEndOf="@+id/imgFiftyWays"
         app:layout_constraintTop_toBottomOf="@+id/txtTitleRate" />
 
-    <CheckBox
-        android:id="@+id/chkFiftyWays"
-        android:layout_width="112dp"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/txtSabotage"
+        android:layout_width="156dp"
+        android:layout_height="26dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/chkFiftyWays"
+        android:text="@string/txtSabotage"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.789"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgSabotage"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFiftyWays" />
+
+    <TextView
+        android:id="@+id/txtScreamAndShout"
+        android:layout_width="156dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/txtScreamAndShout"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgScream"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSabotage" />
+
+    <TextView
+        android:id="@+id/txtSpreadTooThin"
+        android:layout_width="156dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/txtSpreadTooThin"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgSpread"
+        app:layout_constraintTop_toBottomOf="@+id/buttonScream" />
+
+    <TextView
+        android:id="@+id/txtTroublemaker"
+        android:layout_width="156dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/txtTroubleMaker"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgTrouble"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSpread" />
+
+    <Spinner
+        android:id="@+id/spn1"
+        android:layout_width="105dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="8dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/buttonFiftyWays"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spn2"
+        android:layout_width="103dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:prompt="@string/prompt"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/buttonSabotage"
+        app:layout_constraintTop_toBottomOf="@+id/spn1" />
+
+    <Spinner
+        android:id="@+id/spn3"
+        android:layout_width="104dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
+        android:prompt="@string/prompt"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/buttonScream"
+        app:layout_constraintTop_toBottomOf="@+id/spn2" />
+
+    <Spinner
+        android:id="@+id/spn4"
+        android:layout_width="104dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:prompt="@string/prompt"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/buttonSpread"
+        app:layout_constraintTop_toBottomOf="@+id/spn3" />
+
+    <Spinner
+        android:id="@+id/spn5"
+        android:layout_width="103dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:prompt="@string/prompt"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/buttonTrouble"
+        app:layout_constraintTop_toBottomOf="@+id/spn4" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/btnNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.587"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spn5" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="306dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNext" />
 
 
 </android.support.constraint.ConstraintLayout>

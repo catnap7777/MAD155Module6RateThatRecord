@@ -1,5 +1,6 @@
 package mad155.kmathes.mad155module6ratethatrecord;
 
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,13 +20,13 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer mpFiftyWays, mpSabotage, mpScream, mpSpread, mpTrouble;
 
     int playing;
-    int i = 1;
-    int j = 0;
-    int holdA = 0;
-    int holdB = 0;
-    int holdC = 0;
-    int holdD = 0;
-    int holdE = 0;
+    //int i = 1;
+    //int j = 0;
+    //int holdA = 0;
+    //int holdB = 0;
+    //int holdC = 0;
+    //int holdD = 0;
+    //int holdE = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     mpFiftyWays.start();
                     playing = 1;
+                    button1.setTextColor(Color.RED);
                     button1.setText("Pause");
                     button2.setVisibility(View.INVISIBLE);
                     button3.setVisibility(View.INVISIBLE);
@@ -83,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 case 1:
                     mpFiftyWays.pause();
                     playing = 0;
+                    button1.setTextColor(Color.GREEN);
                     button1.setText("Play");
                     button2.setVisibility(View.VISIBLE);
                     button3.setVisibility(View.VISIBLE);
@@ -101,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     mpSabotage.start();
                     playing = 1;
+                    button2.setTextColor(Color.RED);
                     button2.setText("Pause");
                     button1.setVisibility(View.INVISIBLE);
                     button3.setVisibility(View.INVISIBLE);
@@ -110,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 case 1:
                     mpSabotage.pause();
                     playing = 0;
+                    button2.setTextColor(Color.GREEN);
                     button2.setText("Play");
                     button1.setVisibility(View.VISIBLE);
                     button3.setVisibility(View.VISIBLE);
@@ -128,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     mpScream.start();
                     playing = 1;
+                    button3.setTextColor(Color.RED);
                     button3.setText("Pause");
                     button1.setVisibility(View.INVISIBLE);
                     button2.setVisibility(View.INVISIBLE);
@@ -137,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
                 case 1:
                     mpScream.pause();
                     playing = 0;
+                    button3.setTextColor(Color.GREEN);
                     button3.setText("Play");
                     button1.setVisibility(View.VISIBLE);
                     button2.setVisibility(View.VISIBLE);
@@ -155,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     mpSpread.start();
                     playing = 1;
+                    button4.setTextColor(Color.RED);
                     button4.setText("Pause");
                     button1.setVisibility(View.INVISIBLE);
                     button2.setVisibility(View.INVISIBLE);
@@ -164,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
                 case 1:
                     mpSpread.pause();
                     playing = 0;
+                    button4.setTextColor(Color.GREEN);
                     button4.setText("Play");
                     button1.setVisibility(View.VISIBLE);
                     button2.setVisibility(View.VISIBLE);
@@ -182,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     mpTrouble.start();
                     playing = 1;
+                    button5.setTextColor(Color.RED);
                     button5.setText("Pause");
                     button1.setVisibility(View.INVISIBLE);
                     button2.setVisibility(View.INVISIBLE);
@@ -191,6 +201,7 @@ public class MainActivity extends AppCompatActivity {
                 case 1:
                     mpTrouble.pause();
                     playing = 0;
+                    button5.setTextColor(Color.GREEN);
                     button5.setText("Play");
                     button1.setVisibility(View.VISIBLE);
                     button2.setVisibility(View.VISIBLE);

@@ -54,8 +54,8 @@
 
     <string name="btnNext">Click to Submit Ranking</string>
 
-    <string name="txtErrorSelectSpnr">Please select a rank for each song</string>
-    <string name="txtErrorDuplicateSpnr1">Duplicate ranking found: </string>
+    <string name="txtErrorSelectSpnr">\n\nPlease select a rank for each song</string>
+    <string name="txtErrorDuplicateSpnr1">\n\nDuplicate ranking found: </string>
     <string name="txtErrorDuplicateSpnr2">\nPlease correct and resubmit by clicking button</string>
 
 

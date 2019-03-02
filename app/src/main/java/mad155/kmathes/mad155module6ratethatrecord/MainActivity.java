@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
     String selectedItemTextD = " ";
     String selectedItemTextE = " ";
 
+    boolean restartFlag = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         final int spin4Color = 0xff60DCFF;
         final int spin5Color = 0xff96FFFF;
 
-        Button btn1 = (Button) findViewById(R.id.btnNext);
+        final Button btn1 = (Button) findViewById(R.id.btnNext);
 
         final TextView txtResults = (TextView) findViewById(R.id.textView1);
         txtResults.setMovementMethod(new ScrollingMovementMethod());
@@ -123,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         final String txtErrorDuplicateSpnr2 = getString(R.string.txtErrorDuplicateSpnr2);
 
 
-        ArrayAdapter<String> spinnerArrayAdapter1 = new ArrayAdapter<String>(this,
+        final ArrayAdapter<String> spinnerArrayAdapter1 = new ArrayAdapter<String>(this,
                 R.layout.spinner_item, spnListNbrs)
         {
             @Override
@@ -457,6 +459,7 @@ public class MainActivity extends AppCompatActivity {
                 boolean proceedFlag = true;
                 boolean duplicateFlag = false;
                 String duplicateValue = "";
+                //boolean restartFlag = false;
 
                 //public static <T> boolean hasDuplicate(Iterable<T> all) {
                 //    Set<T> set = new HashSet<T>();
@@ -468,6 +471,23 @@ public class MainActivity extends AppCompatActivity {
                 // if(selectItemTextA equals "rank your song" ie. position 0....message user and dont continue until they select
                 //********
 
+               if(restartFlag){
+                   spin1.setEnabled(true);
+                   spin1.setAdapter(spinnerArrayAdapter1);
+                   spin2.setEnabled(true);
+                   spin2.setAdapter(spinnerArrayAdapter1);
+                   spin3.setEnabled(true);
+                   spin3.setAdapter(spinnerArrayAdapter1);
+                   spin4.setEnabled(true);
+                   spin4.setAdapter(spinnerArrayAdapter1);
+                   spin5.setEnabled(true);
+                   spin5.setAdapter(spinnerArrayAdapter1);
+                   txtResults.setText(" ");
+                   btn1.setText(getString(R.string.btnNext));
+                   System.out.println("I AM TRYING TO RESET");
+                   restartFlag = false;
+               }
+
 
                 if (selectedItemTextA.isEmpty() || selectedItemTextA == null ) {
                     System.out.println("SELECTED PROJECT IS EMPTY OR NULL");
@@ -476,7 +496,8 @@ public class MainActivity extends AppCompatActivity {
                     if(spin1.getSelectedItemPosition() == 0) {
                         txtResults.setBackgroundColor(Color.BLACK);
                         txtResults.setTextColor(Color.RED);
-                        txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_HORIZONTAL);
+                        //txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
                         //txtResults.setText("Please select a rank for each song");
                         //txtResults.setText(txtErrorSelectSpnr);
                         txtResults.setText(getText(R.string.txtErrorSelectSpnr));
@@ -499,7 +520,7 @@ public class MainActivity extends AppCompatActivity {
                     if(spin2.getSelectedItemPosition() == 0) {
                         txtResults.setBackgroundColor(Color.BLACK);
                         txtResults.setTextColor(Color.RED);
-                        txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_HORIZONTAL);
                         //txtResults.setText("Please select a rank for each song");
                         //txtResults.setText(txtErrorSelectSpnr);
                         txtResults.setText(getText(R.string.txtErrorSelectSpnr));
@@ -522,7 +543,7 @@ public class MainActivity extends AppCompatActivity {
                     if(spin3.getSelectedItemPosition() == 0) {
                         txtResults.setBackgroundColor(Color.BLACK);
                         txtResults.setTextColor(Color.RED);
-                        txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_HORIZONTAL);
                         //txtResults.setText("Please select a rank for each song");
                         //txtResults.setText(txtErrorSelectSpnr);
                         txtResults.setText(getText(R.string.txtErrorSelectSpnr));
@@ -545,7 +566,7 @@ public class MainActivity extends AppCompatActivity {
                     if(spin4.getSelectedItemPosition() == 0) {
                         txtResults.setBackgroundColor(Color.BLACK);
                         txtResults.setTextColor(Color.RED);
-                        txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_HORIZONTAL);
                         //txtResults.setText("Please select a rank for each song");
                         //txtResults.setText(txtErrorSelectSpnr);
                         txtResults.setText(getText(R.string.txtErrorSelectSpnr));
@@ -568,7 +589,7 @@ public class MainActivity extends AppCompatActivity {
                     if(spin5.getSelectedItemPosition() == 0) {
                         txtResults.setBackgroundColor(Color.BLACK);
                         txtResults.setTextColor(Color.RED);
-                        txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_HORIZONTAL);
                         //txtResults.setText("Please select a rank for each song");
                         //txtResults.setText(txtErrorSelectSpnr);
                         txtResults.setText(getText(R.string.txtErrorSelectSpnr));
@@ -597,7 +618,9 @@ public class MainActivity extends AppCompatActivity {
                             .show();
                     txtResults.setBackgroundColor(Color.BLACK);
                     txtResults.setTextColor(Color.RED);
-                    txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+                    txtResults.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_HORIZONTAL);
+                    //txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.TOP);
+                    //txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
                     //txtResults.setText("Duplicate ranking found: " + duplicateValue +
                     //        "\nPlease correct and resubmit by clicking button");
                     //txtResults.setText( txtErrorDuplicateSpnr1 + " " + duplicateValue + txtErrorDuplicateSpnr2);
@@ -690,6 +713,12 @@ public class MainActivity extends AppCompatActivity {
                     spin3.setEnabled(false);
                     spin4.setEnabled(false);
                     spin5.setEnabled(false);
+
+                    restartFlag = true;
+                    btn1.setText("Click to Rerank");
+
+
+
 
 
                 }

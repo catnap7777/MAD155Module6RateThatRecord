@@ -21,6 +21,7 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -99,18 +100,25 @@ public class MainActivity extends AppCompatActivity {
         final Spinner spin4 = (Spinner) findViewById(R.id.spn4);
         final Spinner spin5 = (Spinner) findViewById(R.id.spn5);
 
+        final int spin0Color = 0xffAEBAC4;
+        final int spin1Color = 0xff8933F9;
+        final int spin2Color = 0xffBA8AFF;
+        final int spin3Color = 0xff3174FF;
+        final int spin4Color = 0xff60DCFF;
+        final int spin5Color = 0xff96FFFF;
+
         Button btn1 = (Button) findViewById(R.id.btnNext);
 
         final TextView txtResults = (TextView) findViewById(R.id.textView1);
         txtResults.setMovementMethod(new ScrollingMovementMethod());
 
-        final String txtResultFiftyWays = getString(R.string.txtFiftyWays);
-        final String txtResultSabotage = getString(R.string.txtSabotage);
-        final String txtResultScreamandShout = getString(R.string.txtScreamAndShout);
-        final String txtResultSpreadTooThin = getString(R.string.txtSpreadTooThin);
-        final String txtResultTroublemaker = getString(R.string.txtTroubleMaker);
+        //final String txtResultFiftyWays = getString(R.string.txtFiftyWays);
+        //final String txtResultSabotage = getString(R.string.txtSabotage);
+        //final String txtResultScreamandShout = getString(R.string.txtScreamAndShout);
+        //final String txtResultSpreadTooThin = getString(R.string.txtSpreadTooThin);
+        //final String txtResultTroublemaker = getString(R.string.txtTroubleMaker);
 
-        final String txtErrorSelectSpnr = getString(R.string.txtErrorSelectSpnr);
+        //final String txtErrorSelectSpnr = getString(R.string.txtErrorSelectSpnr);
         final String txtErrorDuplicateSpnr1 = getString(R.string.txtErrorDuplicateSpnr1);
         final String txtErrorDuplicateSpnr2 = getString(R.string.txtErrorDuplicateSpnr2);
 
@@ -136,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(position == 0) {
                     tv.setTextColor(Color.WHITE);
+                    //tv.setBackgroundColor(spin0Color);
                     tv.setBackgroundColor(Color.GRAY);
                 //} else {
                     //tv.setTextColor(Color.BLACK);
@@ -144,23 +153,28 @@ public class MainActivity extends AppCompatActivity {
                 } else if (position == 1){
                     tv.setTextColor(Color.BLACK);
                     //..light blue
-                    tv.setBackgroundColor(0xff9CB1FF);
+                    //tv.setBackgroundColor(0xff9CB1FF);
+                    tv.setBackgroundColor(spin1Color);
                 } else if (position == 2){
                     tv.setTextColor(Color.BLACK);
                     //..light blue
-                    tv.setBackgroundColor(0xffAAD0FF);
+                    //tv.setBackgroundColor(0xffAAD0FF);
+                    tv.setBackgroundColor(spin2Color);
                 } else if (position == 3){
                     tv.setTextColor(Color.BLACK);
                     //..light blue
-                    tv.setBackgroundColor(0xff8FDDFF);
+                    //tv.setBackgroundColor(0xff8FDDFF);
+                    tv.setBackgroundColor(spin3Color);
                 } else if (position == 4){
                     tv.setTextColor(Color.BLACK);
                     //..light blue
-                    tv.setBackgroundColor(0xff9CF9FF);
+                    //tv.setBackgroundColor(0xff9CF9FF);
+                    tv.setBackgroundColor(spin4Color);
                 } else if (position == 5){
                     tv.setTextColor(Color.BLACK);
                     //..light blue
-                    tv.setBackgroundColor(0xffC1FFFF);
+                    //tv.setBackgroundColor(0xffC1FFFF);
+                    tv.setBackgroundColor(spin5Color);
                 } else {
                     tv.setTextColor(Color.WHITE);
                     tv.setBackgroundColor(Color.BLACK);
@@ -184,7 +198,32 @@ public class MainActivity extends AppCompatActivity {
 
                 selectedItemTextA = (String) parent.getItemAtPosition(position);
 
-                //System.out.println("SELECTEDITEMTEXTA = " + selectedItemTextA);
+                //.. set spinner background color to that of item selected
+                switch(position) {
+                    case 0:
+                        //spin1.setBackgroundColor(spin0Color);
+                        break;
+                    case 1:
+                        spin1.setBackgroundColor(spin1Color);
+                        break;
+                    case 2:
+                        spin1.setBackgroundColor(spin2Color);
+                        break;
+                    case 3:
+                        spin1.setBackgroundColor(spin3Color);
+                        break;
+                    case 4:
+                        spin1.setBackgroundColor(spin4Color);
+                        break;
+                    case 5:
+                        spin1.setBackgroundColor(spin5Color);
+                        break;
+                    default:
+                        spin1.setBackgroundColor(Color.RED);
+                        break;
+                }
+
+                //System.out.println("SELECTEDITEMTEXTA = " + srelectedItemTextA);
 
                 if(position > 0){
                     Toast.makeText
@@ -210,6 +249,32 @@ public class MainActivity extends AppCompatActivity {
                 //String selectedItemText = (String) parent.getItemAtPosition(position);
 
                 selectedItemTextB = (String) parent.getItemAtPosition(position);
+
+                //.. set spinner background color to that of item selected
+                switch(position) {
+                    case 0:
+                        //spin2.setBackgroundColor(spin0Color);
+                        break;
+                    case 1:
+                        spin2.setBackgroundColor(spin1Color);
+                        break;
+                    case 2:
+                        spin2.setBackgroundColor(spin2Color);
+                        break;
+                    case 3:
+                        spin2.setBackgroundColor(spin3Color);
+                        break;
+                    case 4:
+                        spin2.setBackgroundColor(spin4Color);
+                        break;
+                    case 5:
+                        spin2.setBackgroundColor(spin5Color);
+                        break;
+                    default:
+                        spin2.setBackgroundColor(Color.RED);
+                        break;
+                }
+
 
                 //System.out.println("SELECTEDITEMTEXTA = " + selectedItemTextB);
 
@@ -238,6 +303,32 @@ public class MainActivity extends AppCompatActivity {
 
                 selectedItemTextC = (String) parent.getItemAtPosition(position);
 
+                //.. set spinner background color to that of item selected
+                switch(position) {
+                    case 0:
+                        //spin3.setBackgroundColor(spin0Color);
+                        break;
+                    case 1:
+                        spin3.setBackgroundColor(spin1Color);
+                        break;
+                    case 2:
+                        spin3.setBackgroundColor(spin2Color);
+                        break;
+                    case 3:
+                        spin3.setBackgroundColor(spin3Color);
+                        break;
+                    case 4:
+                        spin3.setBackgroundColor(spin4Color);
+                        break;
+                    case 5:
+                        spin3.setBackgroundColor(spin5Color);
+                        break;
+                    default:
+                        spin3.setBackgroundColor(Color.RED);
+                        break;
+                }
+
+
                 //System.out.println("SELECTEDITEMTEXTA = " + selectedItemTextC);
 
                 if(position > 0){
@@ -265,6 +356,32 @@ public class MainActivity extends AppCompatActivity {
 
                 selectedItemTextD = (String) parent.getItemAtPosition(position);
 
+                //.. set spinner background color to that of item selected
+                switch(position) {
+                    case 0:
+                        //spin4.setBackgroundColor(spin0Color);
+                        break;
+                    case 1:
+                        spin4.setBackgroundColor(spin1Color);
+                        break;
+                    case 2:
+                        spin4.setBackgroundColor(spin2Color);
+                        break;
+                    case 3:
+                        spin4.setBackgroundColor(spin3Color);
+                        break;
+                    case 4:
+                        spin4.setBackgroundColor(spin4Color);
+                        break;
+                    case 5:
+                        spin4.setBackgroundColor(spin5Color);
+                        break;
+                    default:
+                        spin4.setBackgroundColor(Color.RED);
+                        break;
+                }
+
+
                 //System.out.println("SELECTEDITEMTEXTA = " + selectedItemTextD);
 
                 if(position > 0){
@@ -291,6 +408,32 @@ public class MainActivity extends AppCompatActivity {
                 //String selectedItemText = (String) parent.getItemAtPosition(position);
 
                 selectedItemTextE = (String) parent.getItemAtPosition(position);
+
+                //.. set spinner background color to that of item selected
+                switch(position) {
+                    case 0:
+                        //spin5.setBackgroundColor(spin0Color);
+                        break;
+                    case 1:
+                        spin5.setBackgroundColor(spin1Color);
+                        break;
+                    case 2:
+                        spin5.setBackgroundColor(spin2Color);
+                        break;
+                    case 3:
+                        spin5.setBackgroundColor(spin3Color);
+                        break;
+                    case 4:
+                        spin5.setBackgroundColor(spin4Color);
+                        break;
+                    case 5:
+                        spin5.setBackgroundColor(spin5Color);
+                        break;
+                    default:
+                        spin5.setBackgroundColor(Color.RED);
+                        break;
+                }
+
 
                 //System.out.println("SELECTEDITEMTEXTA = " + selectedItemTextE);
 
@@ -335,7 +478,8 @@ public class MainActivity extends AppCompatActivity {
                         txtResults.setTextColor(Color.RED);
                         txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
                         //txtResults.setText("Please select a rank for each song");
-                        txtResults.setText(txtErrorSelectSpnr);
+                        //txtResults.setText(txtErrorSelectSpnr);
+                        txtResults.setText(getText(R.string.txtErrorSelectSpnr));
                         proceedFlag = false;
                     }
 
@@ -357,7 +501,8 @@ public class MainActivity extends AppCompatActivity {
                         txtResults.setTextColor(Color.RED);
                         txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
                         //txtResults.setText("Please select a rank for each song");
-                        txtResults.setText(txtErrorSelectSpnr);
+                        //txtResults.setText(txtErrorSelectSpnr);
+                        txtResults.setText(getText(R.string.txtErrorSelectSpnr));
                         proceedFlag = false;
                     }
 
@@ -379,7 +524,8 @@ public class MainActivity extends AppCompatActivity {
                         txtResults.setTextColor(Color.RED);
                         txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
                         //txtResults.setText("Please select a rank for each song");
-                        txtResults.setText(txtErrorSelectSpnr);
+                        //txtResults.setText(txtErrorSelectSpnr);
+                        txtResults.setText(getText(R.string.txtErrorSelectSpnr));
                         proceedFlag = false;
                     }
 
@@ -401,7 +547,8 @@ public class MainActivity extends AppCompatActivity {
                         txtResults.setTextColor(Color.RED);
                         txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
                         //txtResults.setText("Please select a rank for each song");
-                        txtResults.setText(txtErrorSelectSpnr);
+                        //txtResults.setText(txtErrorSelectSpnr);
+                        txtResults.setText(getText(R.string.txtErrorSelectSpnr));
                         proceedFlag = false;
                     }
 
@@ -423,7 +570,8 @@ public class MainActivity extends AppCompatActivity {
                         txtResults.setTextColor(Color.RED);
                         txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
                         //txtResults.setText("Please select a rank for each song");
-                        txtResults.setText(txtErrorSelectSpnr);
+                        //txtResults.setText(txtErrorSelectSpnr);
+                        txtResults.setText(getText(R.string.txtErrorSelectSpnr));
                         proceedFlag = false;
                     }
 
@@ -452,7 +600,9 @@ public class MainActivity extends AppCompatActivity {
                     txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
                     //txtResults.setText("Duplicate ranking found: " + duplicateValue +
                     //        "\nPlease correct and resubmit by clicking button");
-                    txtResults.setText( txtErrorDuplicateSpnr1 + " " + duplicateValue + txtErrorDuplicateSpnr2);
+                    //txtResults.setText( txtErrorDuplicateSpnr1 + " " + duplicateValue + txtErrorDuplicateSpnr2);
+                    txtResults.setText(getText(R.string.txtErrorDuplicateSpnr1) + " " + duplicateValue +
+                            getText(R.string.txtErrorDuplicateSpnr2));
                 }
 
                 if (proceedFlag && !duplicateFlag){
@@ -468,20 +618,72 @@ public class MainActivity extends AppCompatActivity {
                     //        "\nspinner3 rank: " + spin3.getSelectedItem().toString() +
                     //        "\nspinner4 rank: " + spin4.getSelectedItem().toString() +
                     //        "\nspinner5 rank: " + spin5.getSelectedItem().toString());
+                    //txtResults.setText("\nSummary... Thank you for your submission!" +
+                    //        "\n\n" + txtResultFiftyWays + ": \t\tRank = " + spin1.getSelectedItem().toString() +
+                    //        "\n" + txtResultSabotage + ": \t\tRank = " + spin2.getSelectedItem().toString() +
+                    //        "\n" + txtResultScreamandShout + ": \t\tRank = " + spin3.getSelectedItem().toString() +
+                    //        "\n" + txtResultSpreadTooThin + ": \t\tRank = " + spin4.getSelectedItem().toString() +
+                    //        "\n" + txtResultTroublemaker + ": \t\tRank = " + spin5.getSelectedItem().toString());
+
+                    //String holdSpin1 = spin1.getSelectedItem().toString();
+                    String holdSpin1 = spin1.getSelectedItem().toString();
+                    String holdSpin2 = spin2.getSelectedItem().toString();
+                    String holdSpin3 = spin3.getSelectedItem().toString();
+                    String holdSpin4 = spin4.getSelectedItem().toString();
+                    String holdSpin5 = spin5.getSelectedItem().toString();
+
+                   //String[] array1 = new String[] {" ", " ", " ", " ", " "};
+
+                    List<String> resultsList = new ArrayList<>();
+
+                    for(int k=0; k<6; k++) {
+                        if(holdSpin1.equalsIgnoreCase(String.valueOf(k+1))) {
+                            //results1 = holdSpin1 + ". " + getText(R.string.resultsFiftyWays);
+                            resultsList.add(k, holdSpin1 + ". " + getText(R.string.resultsFiftyWays));
+                        }
+                        if(holdSpin2.equalsIgnoreCase(String.valueOf(k+1))) {
+                            //results1 = holdSpin1 + ". " + getText(R.string.resultsFiftyWays);
+                            resultsList.add(k, holdSpin2 + ". " + getText(R.string.resultsSabotage));
+                        }
+                        if(holdSpin3.equalsIgnoreCase(String.valueOf(k+1))) {
+                            //results1 = holdSpin1 + ". " + getText(R.string.resultsFiftyWays);
+                            resultsList.add(k, holdSpin3 + ". " + getText(R.string.resultsScreamAndShout));
+                        }
+                        if(holdSpin4.equalsIgnoreCase(String.valueOf(k+1))) {
+                            //results1 = holdSpin1 + ". " + getText(R.string.resultsFiftyWays);
+                            resultsList.add(k, holdSpin4 + ". " + getText(R.string.resultsSpreadTooThin));
+                        }
+                        if(holdSpin5.equalsIgnoreCase(String.valueOf(k+1))) {
+                            //results1 = holdSpin1 + ". " + getText(R.string.resultsFiftyWays);
+                            resultsList.add(k, holdSpin5 + ". " + getText(R.string.resultsTroubleMaker));
+                        }
+                    }
+
                     txtResults.setText("\nSummary... Thank you for your submission!" +
-                            "\n\n" + txtResultFiftyWays + ": \t\tRank = " + spin1.getSelectedItem().toString() +
-                            "\n" + txtResultSabotage + ": \t\tRank = " + spin2.getSelectedItem().toString() +
-                            "\n" + txtResultScreamandShout + ": \t\tRank = " + spin3.getSelectedItem().toString() +
-                            "\n" + txtResultSpreadTooThin + ": \t\tRank = " + spin4.getSelectedItem().toString() +
-                            "\n" + txtResultTroublemaker + ": \t\tRank = " + spin5.getSelectedItem().toString());
+                            "\n\n" + resultsList.get(0) +
+                            "\n" + resultsList.get(1) +
+                            "\n" + resultsList.get(2) +
+                            "\n" + resultsList.get(3) +
+                            "\n" + resultsList.get(4));
+
+
+                    //.. old way to print out ... not in order though
+                    //txtResults.setText("\nSummary... Thank you for your submission!" +
+                    //      "\n\n" + spin1.getSelectedItem().toString() + ". " + getText(R.string.resultsFiftyWays) +
+                    //        "\n" + spin2.getSelectedItem().toString() + ". " + getText(R.string.resultsSabotage) +
+                    //        "\n" + spin3.getSelectedItem().toString() + ". " + getText(R.string.resultsScreamAndShout) +
+                    //        "\n" + spin4.getSelectedItem().toString()+ ". " + getText(R.string.resultsSpreadTooThin) +
+                    //        "\n" + spin5.getSelectedItem().toString()+ ". " + getText(R.string.resultsTroubleMaker));
 
                     //..set spinners to disabled and light red background courtesy of
                     //..  ..https://color.adobe.com/create/color-wheel
-                    spin1.setBackgroundColor(0xffFFE2E6);
-                    spin2.setBackgroundColor(0xffFFE2E6);
-                    spin3.setBackgroundColor(0xffFFE2E6);
-                    spin4.setBackgroundColor(0xffFFE2E6);
-                    spin5.setBackgroundColor(0xffFFE2E6);
+                    int finishedBackgroundColor = 0xffEFE0FF;
+                    //int finishedBackgroundColor = 0xffFFE2E6;
+                    spin1.setBackgroundColor(finishedBackgroundColor);
+                    spin2.setBackgroundColor(finishedBackgroundColor);
+                    spin3.setBackgroundColor(finishedBackgroundColor);
+                    spin4.setBackgroundColor(finishedBackgroundColor);
+                    spin5.setBackgroundColor(finishedBackgroundColor);
 
                     spin1.setEnabled(false);
                     spin2.setEnabled(false);

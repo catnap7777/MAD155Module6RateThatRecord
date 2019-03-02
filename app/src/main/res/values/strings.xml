@@ -18,6 +18,12 @@
     <string name="txtSpreadTooThin">\tSpread Too Thin\n\t\t\t &#8764; Dirty Heads</string>
     <string name="txtTroubleMaker">\tTroublemaker\n\t\t\t &#8764; Olly Murs</string>
 
+    <string name="resultsFiftyWays">Fifty Ways to Say Goodbye &#8764; Train</string>
+    <string name="resultsSabotage">Sabotage &#8764; Beastie Boys</string>
+    <string name="resultsScreamAndShout">Scream and Shout &#8764; Will.I.Am &amp; Britney Spears</string>
+    <string name="resultsSpreadTooThin">Spread Too Thin &#8764; Dirty Heads</string>
+    <string name="resultsTroubleMaker">Troublemaker &#8764; Olly Murs</string>
+
     <string name="btnFiftyWays">Play</string>
     <string name="btnSabotage">Play</string>
     <string name="btnScreamAndShout">Play</string>
@@ -51,11 +57,6 @@
     <string name="txtErrorSelectSpnr">Please select a rank for each song</string>
     <string name="txtErrorDuplicateSpnr1">Duplicate ranking found: </string>
     <string name="txtErrorDuplicateSpnr2">\nPlease correct and resubmit by clicking button</string>
-
-
-
-
-
 
 
 </resources>

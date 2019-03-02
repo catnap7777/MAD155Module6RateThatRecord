@@ -16,23 +16,22 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        /*
+        /* Old countdown timer like in Aloha assignment
+        //.. so this was basically putting up splash xml for 5 seconds and then continuing
+        opening1.schedule(task1, 5000);  //1000 milliseconds = approx 1 second in real time
+
         TimerTask task1 = new TimerTask() {
             @Override
             public void run() {
                 finish();
                 //startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 //startActivity(new Intent(SplashActivity.this, Splash2Activity.class));
-
             }
         };
-
         Timer opening1 = new Timer();
-
-        //.. so this was basically putting up splash xml for 5 seconds and then continuing
-        opening1.schedule(task1, 5000);  //1000 milliseconds = approx 1 second in real time
         */
 
+        //.. using CountDownTimer to put up multiple images on splash screen
         new CountDownTimer(8000, 2000) {
             int i = 0;
             public void onTick(long millisUntilFinished) {
@@ -56,10 +55,7 @@ public class SplashActivity extends AppCompatActivity {
             }
 
             public void onFinish() {
-                //finish your splash screen activity
-                //Splash2Activity.this.finish();
                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
-
             }
 
         }

@@ -28,6 +28,7 @@ import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
+    //.. buttons for playing music
     Button button1;
     Button button2;
     Button button3;
@@ -36,17 +37,21 @@ public class MainActivity extends AppCompatActivity {
 
     MediaPlayer mpFiftyWays, mpSabotage, mpScream, mpSpread, mpTrouble;
 
+    //.. used for pause/play
     int playing;
 
+    //.. setup for spinners list
     String[] spnArrayNbrs = new String[] {"Click to Rank", "1","2","3","4","5"};
     List<String> spnListNbrs = new ArrayList<>(Arrays.asList(spnArrayNbrs));
 
+    //.. used to see what spinner item rank was selected
     String selectedItemTextA = " ";
     String selectedItemTextB = " ";
     String selectedItemTextC = " ";
     String selectedItemTextD = " ";
     String selectedItemTextE = " ";
 
+    //.. used if user wants to rerank items again
     boolean restartFlag = false;
 
 
@@ -57,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         //.. set the title on the action bar for this activity and override title in manifest
         //setTitle(R.string.txt_play_music);
 
-        //.. to get rid of action bar for this activity
+        //.. to get rid of action bar for this activity (because I needed more room on screen
         try
         {
             this.getSupportActionBar().hide();
@@ -102,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         final Spinner spin4 = (Spinner) findViewById(R.id.spn4);
         final Spinner spin5 = (Spinner) findViewById(R.id.spn5);
 
+        //.. used to set the color for each spinner - in the drop down and after selected (makes it easier to see choice)
         final int spin0Color = 0xffAEBAC4;
         final int spin1Color = 0xff8933F9;
         final int spin2Color = 0xffBA8AFF;
@@ -112,19 +118,14 @@ public class MainActivity extends AppCompatActivity {
         final Button btn1 = (Button) findViewById(R.id.btnNext);
 
         final TextView txtResults = (TextView) findViewById(R.id.textView1);
+        //.. used so TextView for results can be scrollable if needed
         txtResults.setMovementMethod(new ScrollingMovementMethod());
 
-        //final String txtResultFiftyWays = getString(R.string.txtFiftyWays);
-        //final String txtResultSabotage = getString(R.string.txtSabotage);
-        //final String txtResultScreamandShout = getString(R.string.txtScreamAndShout);
-        //final String txtResultSpreadTooThin = getString(R.string.txtSpreadTooThin);
-        //final String txtResultTroublemaker = getString(R.string.txtTroubleMaker);
-
-        //final String txtErrorSelectSpnr = getString(R.string.txtErrorSelectSpnr);
         final String txtErrorDuplicateSpnr1 = getString(R.string.txtErrorDuplicateSpnr1);
         final String txtErrorDuplicateSpnr2 = getString(R.string.txtErrorDuplicateSpnr2);
 
 
+        //.. array adapter - only one needed for all 5 spinners
         final ArrayAdapter<String> spinnerArrayAdapter1 = new ArrayAdapter<String>(this,
                 R.layout.spinner_item, spnListNbrs)
         {
@@ -148,55 +149,38 @@ public class MainActivity extends AppCompatActivity {
                     tv.setTextColor(Color.WHITE);
                     //tv.setBackgroundColor(spin0Color);
                     tv.setBackgroundColor(Color.GRAY);
-                //} else {
-                    //tv.setTextColor(Color.BLACK);
-                    //..light blue
-                    //tv.setBackgroundColor(0xff8FDDFF);
                 } else if (position == 1){
                     tv.setTextColor(Color.BLACK);
-                    //..light blue
-                    //tv.setBackgroundColor(0xff9CB1FF);
                     tv.setBackgroundColor(spin1Color);
                 } else if (position == 2){
                     tv.setTextColor(Color.BLACK);
-                    //..light blue
-                    //tv.setBackgroundColor(0xffAAD0FF);
                     tv.setBackgroundColor(spin2Color);
                 } else if (position == 3){
                     tv.setTextColor(Color.BLACK);
-                    //..light blue
-                    //tv.setBackgroundColor(0xff8FDDFF);
                     tv.setBackgroundColor(spin3Color);
                 } else if (position == 4){
                     tv.setTextColor(Color.BLACK);
-                    //..light blue
-                    //tv.setBackgroundColor(0xff9CF9FF);
                     tv.setBackgroundColor(spin4Color);
                 } else if (position == 5){
                     tv.setTextColor(Color.BLACK);
-                    //..light blue
-                    //tv.setBackgroundColor(0xffC1FFFF);
                     tv.setBackgroundColor(spin5Color);
                 } else {
                     tv.setTextColor(Color.WHITE);
                     tv.setBackgroundColor(Color.BLACK);
                 }
-
                 return view;
             }
         };
 
         spinnerArrayAdapter1.setDropDownViewResource(R.layout.spinner_item);
 
-        //..Fifty Ways
+        //..for Fifty Ways
         spin1.setAdapter(spinnerArrayAdapter1);
         // When an item is selected...
         spin1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                //String selectedItemText = (String) parent.getItemAtPosition(position);
 
                 selectedItemTextA = (String) parent.getItemAtPosition(position);
 
@@ -225,8 +209,6 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
 
-                //System.out.println("SELECTEDITEMTEXTA = " + srelectedItemTextA);
-
                 if(position > 0){
                     Toast.makeText
                             (getApplicationContext(), "Selected : " + selectedItemTextA, Toast.LENGTH_SHORT)
@@ -240,15 +222,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //..Sabotage
+        //.. for Sabotage
         spin2.setAdapter(spinnerArrayAdapter1);
         // When an item is selected...
         spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                //String selectedItemText = (String) parent.getItemAtPosition(position);
 
                 selectedItemTextB = (String) parent.getItemAtPosition(position);
 
@@ -277,9 +257,6 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
 
-
-                //System.out.println("SELECTEDITEMTEXTA = " + selectedItemTextB);
-
                 if(position > 0){
                     Toast.makeText
                             (getApplicationContext(), "Selected : " + selectedItemTextB, Toast.LENGTH_SHORT)
@@ -293,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //..Scream and Shout
+        //..for Scream and Shout
         spin3.setAdapter(spinnerArrayAdapter1);
         // When an item is selected...
         spin3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -301,9 +278,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                //String selectedItemText = (String) parent.getItemAtPosition(position);
-
-                selectedItemTextC = (String) parent.getItemAtPosition(position);
+               selectedItemTextC = (String) parent.getItemAtPosition(position);
 
                 //.. set spinner background color to that of item selected
                 switch(position) {
@@ -330,9 +305,6 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
 
-
-                //System.out.println("SELECTEDITEMTEXTA = " + selectedItemTextC);
-
                 if(position > 0){
                     Toast.makeText
                             (getApplicationContext(), "Selected : " + selectedItemTextC, Toast.LENGTH_SHORT)
@@ -346,15 +318,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //..Spread Too Thin
+        //..for Spread Too Thin
         spin4.setAdapter(spinnerArrayAdapter1);
         // When an item is selected...
         spin4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                //String selectedItemText = (String) parent.getItemAtPosition(position);
 
                 selectedItemTextD = (String) parent.getItemAtPosition(position);
 
@@ -383,9 +353,6 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
 
-
-                //System.out.println("SELECTEDITEMTEXTA = " + selectedItemTextD);
-
                 if(position > 0){
                     Toast.makeText
                             (getApplicationContext(), "Selected : " + selectedItemTextD, Toast.LENGTH_SHORT)
@@ -399,15 +366,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //..Troublemaker
+        //..for Troublemaker
         spin5.setAdapter(spinnerArrayAdapter1);
         // When an item is selected...
         spin5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                //String selectedItemText = (String) parent.getItemAtPosition(position);
 
                 selectedItemTextE = (String) parent.getItemAtPosition(position);
 
@@ -436,9 +401,6 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
 
-
-                //System.out.println("SELECTEDITEMTEXTA = " + selectedItemTextE);
-
                 if(position > 0){
                     Toast.makeText
                             (getApplicationContext(), "Selected : " + selectedItemTextE, Toast.LENGTH_SHORT)
@@ -452,26 +414,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //.. button to rank choices and setText summary in TextView
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                //.. check to see if all choices for spinner selected
                 boolean proceedFlag = true;
+                //.. check to see if user picked duplicates
                 boolean duplicateFlag = false;
+                //.. to save value of duplicates
                 String duplicateValue = "";
-                //boolean restartFlag = false;
 
-                //public static <T> boolean hasDuplicate(Iterable<T> all) {
-                //    Set<T> set = new HashSet<T>();
+                //.. list used to assist with checking for duplicates - duplicates cannot be add to
+                //..   a list that's "Set<String>" rather than "List<String>"
                 Set<String> setList = new HashSet<>();
 
-                //System.out.println("MADE IT TO THE BUTTON CLICK");
-                //check to see if there is a "value" for the spinner field. if not, make user select one before
-                // proceeding... set up another nexted if
-                // if(selectItemTextA equals "rank your song" ie. position 0....message user and dont continue until they select
-                //********
-
-               if(restartFlag){
+               //.. "reset" the screen if user wants to do ranking again
+                if(restartFlag){
                    spin1.setEnabled(true);
                    spin1.setAdapter(spinnerArrayAdapter1);
                    spin2.setEnabled(true);
@@ -492,23 +452,23 @@ public class MainActivity extends AppCompatActivity {
                 if (selectedItemTextA.isEmpty() || selectedItemTextA == null ) {
                     System.out.println("SELECTED PROJECT IS EMPTY OR NULL");
                 } else {
-
+                    //.. position 0 is the text that says "Click to Rank" in spnArrayNbrs and spnListNbrs -
+                    //   It's in the beginning of the code and are the items that show up in the drop down spinner list.
+                    //   If "Click to Rank" is showing, it means that user did not choose a rank and needs to do so
+                    //   before proceeding. A message is formatted and sent to txtResults to indicate this
                     if(spin1.getSelectedItemPosition() == 0) {
                         txtResults.setBackgroundColor(Color.BLACK);
                         txtResults.setTextColor(Color.RED);
-                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_HORIZONTAL);
+                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL);
                         //txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
-                        //txtResults.setText("Please select a rank for each song");
-                        //txtResults.setText(txtErrorSelectSpnr);
                         txtResults.setText(getText(R.string.txtErrorSelectSpnr));
                         proceedFlag = false;
                     }
-
+                    //..try to add selection to "Set" list to see if it works to check for duplicates
                     if(spin1.getSelectedItemPosition() != 0) {
                         if (!setList.add(selectedItemTextA)) {
                             duplicateFlag = true;
                             duplicateValue = selectedItemTextA;
-                            //System.out.println("HELLO, I AM IN HERE1");
                         }
                     }
                 }
@@ -516,22 +476,22 @@ public class MainActivity extends AppCompatActivity {
                 if (selectedItemTextB.isEmpty() || selectedItemTextB == null ) {
                     System.out.println("SELECTED PROJECT IS EMPTY OR NULL");
                 } else {
-
+                    //.. position 0 is the text that says "Click to Rank" in spnArrayNbrs and spnListNbrs -
+                    //   It's in the beginning of the code and are the items that show up in the drop down spinner list.
+                    //   If "Click to Rank" is showing, it means that user did not choose a rank and needs to do so
+                    //   before proceeding. A message is formatted and sent to txtResults to indicate this
                     if(spin2.getSelectedItemPosition() == 0) {
                         txtResults.setBackgroundColor(Color.BLACK);
                         txtResults.setTextColor(Color.RED);
-                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_HORIZONTAL);
-                        //txtResults.setText("Please select a rank for each song");
-                        //txtResults.setText(txtErrorSelectSpnr);
+                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL);
                         txtResults.setText(getText(R.string.txtErrorSelectSpnr));
                         proceedFlag = false;
                     }
-
+                    //..try to add selection to "Set" list to see if it works to check for duplicates
                     if(spin2.getSelectedItemPosition() != 0) {
                         if (!setList.add(selectedItemTextB)) {
                             duplicateFlag = true;
                             duplicateValue = selectedItemTextB;
-                            //System.out.println("HELLO, I AM IN HERE2");
                         }
                     }
                 }
@@ -539,22 +499,22 @@ public class MainActivity extends AppCompatActivity {
                 if (selectedItemTextC.isEmpty() || selectedItemTextC == null ) {
                     System.out.println("SELECTED PROJECT IS EMPTY OR NULL");
                 } else {
-
+                    //.. position 0 is the text that says "Click to Rank" in spnArrayNbrs and spnListNbrs -
+                    //   It's in the beginning of the code and are the items that show up in the drop down spinner list.
+                    //   If "Click to Rank" is showing, it means that user did not choose a rank and needs to do so
+                    //   before proceeding. A message is formatted and sent to txtResults to indicate this
                     if(spin3.getSelectedItemPosition() == 0) {
                         txtResults.setBackgroundColor(Color.BLACK);
                         txtResults.setTextColor(Color.RED);
-                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_HORIZONTAL);
-                        //txtResults.setText("Please select a rank for each song");
-                        //txtResults.setText(txtErrorSelectSpnr);
+                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL);
                         txtResults.setText(getText(R.string.txtErrorSelectSpnr));
                         proceedFlag = false;
                     }
-
+                    //..try to add selection to "Set" list to see if it works to check for duplicates
                     if(spin3.getSelectedItemPosition() != 0) {
                         if (!setList.add(selectedItemTextC)) {
                             duplicateFlag = true;
                             duplicateValue = selectedItemTextC;
-                            //System.out.println("HELLO, I AM IN HERE3");
                         }
                     }
                 }
@@ -562,22 +522,22 @@ public class MainActivity extends AppCompatActivity {
                 if (selectedItemTextD.isEmpty() || selectedItemTextD == null ) {
                     System.out.println("SELECTED PROJECT IS EMPTY OR NULL");
                 } else {
-
+                    //.. position 0 is the text that says "Click to Rank" in spnArrayNbrs and spnListNbrs -
+                    //   It's in the beginning of the code and are the items that show up in the drop down spinner list.
+                    //   If "Click to Rank" is showing, it means that user did not choose a rank and needs to do so
+                    //   before proceeding. A message is formatted and sent to txtResults to indicate this
                     if(spin4.getSelectedItemPosition() == 0) {
                         txtResults.setBackgroundColor(Color.BLACK);
                         txtResults.setTextColor(Color.RED);
-                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_HORIZONTAL);
-                        //txtResults.setText("Please select a rank for each song");
-                        //txtResults.setText(txtErrorSelectSpnr);
+                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL);
                         txtResults.setText(getText(R.string.txtErrorSelectSpnr));
                         proceedFlag = false;
                     }
-
+                    //..try to add selection to "Set" list to see if it works to check for duplicates
                     if(spin4.getSelectedItemPosition() != 0) {
                         if (!setList.add(selectedItemTextD)) {
                             duplicateFlag = true;
                             duplicateValue = selectedItemTextD;
-                            //System.out.println("HELLO, I AM IN HERE4");
                         }
                     }
                 }
@@ -585,80 +545,66 @@ public class MainActivity extends AppCompatActivity {
                 if (selectedItemTextE.isEmpty() || selectedItemTextE == null ) {
                     System.out.println("SELECTED PROJECT IS EMPTY OR NULL");
                 } else {
-
+                    //.. position 0 is the text that says "Click to Rank" in spnArrayNbrs and spnListNbrs -
+                    //   It's in the beginning of the code and are the items that show up in the drop down spinner list.
+                    //   If "Click to Rank" is showing, it means that user did not choose a rank and needs to do so
+                    //   before proceeding. A message is formatted and sent to txtResults to indicate this
                     if(spin5.getSelectedItemPosition() == 0) {
                         txtResults.setBackgroundColor(Color.BLACK);
                         txtResults.setTextColor(Color.RED);
-                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_HORIZONTAL);
-                        //txtResults.setText("Please select a rank for each song");
-                        //txtResults.setText(txtErrorSelectSpnr);
+                        txtResults.setGravity(Gravity.CENTER_HORIZONTAL);
                         txtResults.setText(getText(R.string.txtErrorSelectSpnr));
                         proceedFlag = false;
                     }
-
+                    //..try to add selection to "Set" list to see if it works to check for duplicates
                     if(spin5.getSelectedItemPosition() != 0) {
                         if (!setList.add(selectedItemTextE)) {
                             duplicateFlag = true;
                             duplicateValue = selectedItemTextE;
-                            //System.out.println("HELLO, I AM IN HERE5");
                         }
                     }
                 }
 
-                System.out.println("Values : \n" + selectedItemTextA + "\n" +
-                        selectedItemTextB + "\n" + selectedItemTextC + "\n" + selectedItemTextD + "\n"
-                        + selectedItemTextE + "\n");
+                //.. used for debugging
+                //System.out.println("Values : \n" + selectedItemTextA + "\n" +
+                //       selectedItemTextB + "\n" + selectedItemTextC + "\n" + selectedItemTextD + "\n"
+                //        + selectedItemTextE + "\n");
+                //System.out.println("Duplicate Values: " + duplicateValue);
 
-                System.out.println("Duplicate Values: " + duplicateValue);
-
+                //.. if duplicates ranks were entered by user
                 if(duplicateFlag) {
-                    //duplicateFlag = false;
+
                     Toast.makeText
                             (getApplicationContext(), "Duplicate rankings detected", Toast.LENGTH_SHORT)
                             .show();
                     txtResults.setBackgroundColor(Color.BLACK);
                     txtResults.setTextColor(Color.RED);
-                    txtResults.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_HORIZONTAL);
-                    //txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.TOP);
-                    //txtResults.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
-                    //txtResults.setText("Duplicate ranking found: " + duplicateValue +
-                    //        "\nPlease correct and resubmit by clicking button");
-                    //txtResults.setText( txtErrorDuplicateSpnr1 + " " + duplicateValue + txtErrorDuplicateSpnr2);
+                    txtResults.setGravity(Gravity.CENTER_HORIZONTAL);
                     txtResults.setText(getText(R.string.txtErrorDuplicateSpnr1) + " " + duplicateValue +
                             getText(R.string.txtErrorDuplicateSpnr2));
                 }
 
+                //.. if no duplicates and user entered a rank for each song
                 if (proceedFlag && !duplicateFlag){
-                    // if this works, disable spinners and thank user for input (possible new screen)
 
-                    //System.out.println("SUMMARY TIME!");
                     txtResults.setBackgroundColor(Color.WHITE);
                     txtResults.setTextColor(Color.BLUE);
                     txtResults.setGravity(Gravity.START | Gravity.TOP);
-                    //txtResults.setText("\nSummary... Thank you for your submission!" +
-                    //        "\nspinner1 rank: " + spin1.getSelectedItem().toString() +
-                    //        "\nspinner2 rank: " + spin2.getSelectedItem().toString() +
-                    //        "\nspinner3 rank: " + spin3.getSelectedItem().toString() +
-                    //        "\nspinner4 rank: " + spin4.getSelectedItem().toString() +
-                    //        "\nspinner5 rank: " + spin5.getSelectedItem().toString());
-                    //txtResults.setText("\nSummary... Thank you for your submission!" +
-                    //        "\n\n" + txtResultFiftyWays + ": \t\tRank = " + spin1.getSelectedItem().toString() +
-                    //        "\n" + txtResultSabotage + ": \t\tRank = " + spin2.getSelectedItem().toString() +
-                    //        "\n" + txtResultScreamandShout + ": \t\tRank = " + spin3.getSelectedItem().toString() +
-                    //        "\n" + txtResultSpreadTooThin + ": \t\tRank = " + spin4.getSelectedItem().toString() +
-                    //        "\n" + txtResultTroublemaker + ": \t\tRank = " + spin5.getSelectedItem().toString());
 
-                    //String holdSpin1 = spin1.getSelectedItem().toString();
+                    //.. get rankings from each spinner
                     String holdSpin1 = spin1.getSelectedItem().toString();
                     String holdSpin2 = spin2.getSelectedItem().toString();
                     String holdSpin3 = spin3.getSelectedItem().toString();
                     String holdSpin4 = spin4.getSelectedItem().toString();
                     String holdSpin5 = spin5.getSelectedItem().toString();
 
-                   //String[] array1 = new String[] {" ", " ", " ", " ", " "};
-
+                    //.. set up new list so that rankings and songs/artists can be "sorted"
+                    //   in order for creating setText for txtResults TextView widget
                     List<String> resultsList = new ArrayList<>();
 
+                    //.. loop through 5 times (for all 5 songs) and build rank/song/artist string and
+                    //   store it in the corresponding List element. ie. if a song ranked 3rd, store it
+                    //   (the results string to be output) in the 3rd element of the list
                     for(int k=0; k<6; k++) {
                         if(holdSpin1.equalsIgnoreCase(String.valueOf(k+1))) {
                             //results1 = holdSpin1 + ". " + getText(R.string.resultsFiftyWays);
@@ -682,6 +628,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
 
+                    //.. "read" from the List built above and format/setText the results output
                     txtResults.setText("\nSummary... Thank you for your submission!" +
                             "\n\n" + resultsList.get(0) +
                             "\n" + resultsList.get(1) +
@@ -690,7 +637,7 @@ public class MainActivity extends AppCompatActivity {
                             "\n" + resultsList.get(4));
 
 
-                    //.. old way to print out ... not in order though
+                    //.. old way to print out ... this doesn't come out strict number order though
                     //txtResults.setText("\nSummary... Thank you for your submission!" +
                     //      "\n\n" + spin1.getSelectedItem().toString() + ". " + getText(R.string.resultsFiftyWays) +
                     //        "\n" + spin2.getSelectedItem().toString() + ". " + getText(R.string.resultsSabotage) +
@@ -698,9 +645,10 @@ public class MainActivity extends AppCompatActivity {
                     //        "\n" + spin4.getSelectedItem().toString()+ ". " + getText(R.string.resultsSpreadTooThin) +
                     //        "\n" + spin5.getSelectedItem().toString()+ ". " + getText(R.string.resultsTroubleMaker));
 
-                    //..set spinners to disabled and light red background courtesy of
-                    //..  ..https://color.adobe.com/create/color-wheel
+                    //.. also set spinners to be disabled and light gray background courtesy of
+                    //   https://color.adobe.com/create/color-wheel
                     int finishedBackgroundColor = 0xffEFE0FF;
+                    //.. for light red
                     //int finishedBackgroundColor = 0xffFFE2E6;
                     spin1.setBackgroundColor(finishedBackgroundColor);
                     spin2.setBackgroundColor(finishedBackgroundColor);
@@ -714,13 +662,10 @@ public class MainActivity extends AppCompatActivity {
                     spin4.setEnabled(false);
                     spin5.setEnabled(false);
 
+                    //.. set flag in case user wants to rerank all
                     restartFlag = true;
+                    //.. change button text
                     btn1.setText("Click to Rerank");
-
-
-
-
-
                 }
 
             }
@@ -730,7 +675,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //..button1
+    //..button1 listener to play/pause Fifty Ways
     Button.OnClickListener bFiftyWays = new Button.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -759,7 +704,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
-    //..button2
+    //..button2 listener to play/pause Sabotage
     Button.OnClickListener bSabotage = new Button.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -788,7 +733,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
-    //..button3
+    //..button3 listener to play/pause Scream and Shout
     Button.OnClickListener bScream = new Button.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -817,7 +762,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
-    //..button4
+    //..button4 listener to play/pause Spread Too Thin
     Button.OnClickListener bSpread = new Button.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -846,7 +791,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
-    //..button5
+    //..button5 listener to play/pause Troublemaker
     Button.OnClickListener bTrouble = new Button.OnClickListener() {
         @Override
         public void onClick(View v) {

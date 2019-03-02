@@ -5,55 +5,35 @@
     <string name="imgDesc">Rate That Record Random Images</string>
 
     <string name="txtTitleRate">Listen, Click, and Rank!</string>
-    <!--<string name="txtRateIt">Click to Rank</string>
-    <string name="imgFiftyWays">Image for Fifty Ways to Say Goodbye Song</string>
-    <string name="imgSabotage">Image for Sabotage Song</string>
-    <string name="imgScreamAndShout">Image for Scream and Shout Song</string>
-    <string name="imgSpreadTooThin">Image for Spread Too Thin Song</string>
-    <string name="imgTroubleMaker">Image for Troublemaker Song</string>
-    -->
+
+    <!-- for mainactivity screen - title of album and artist -->
     <string name="txtFiftyWays">\tFifty Ways to Say Goodbye\n\t\t\t &#8764; Train</string>
     <string name="txtSabotage">\tSabotage\n\t\t\t &#8764; Beastie Boys</string>
     <string name="txtScreamAndShout">\tScream and Shout\n\t\t\t &#8764; Will.I.Am &amp; \n\t\t\tBritney Spears</string>
     <string name="txtSpreadTooThin">\tSpread Too Thin\n\t\t\t &#8764; Dirty Heads</string>
     <string name="txtTroubleMaker">\tTroublemaker\n\t\t\t &#8764; Olly Murs</string>
 
+    <!-- for results with no next line returns -->
     <string name="resultsFiftyWays">Fifty Ways to Say Goodbye &#8764; Train</string>
     <string name="resultsSabotage">Sabotage &#8764; Beastie Boys</string>
     <string name="resultsScreamAndShout">Scream and Shout &#8764; Will.I.Am &amp; Britney Spears</string>
     <string name="resultsSpreadTooThin">Spread Too Thin &#8764; Dirty Heads</string>
     <string name="resultsTroubleMaker">Troublemaker &#8764; Olly Murs</string>
 
+    <!-- initial setup on buttons -->
     <string name="btnFiftyWays">Play</string>
     <string name="btnSabotage">Play</string>
     <string name="btnScreamAndShout">Play</string>
     <string name="btnSpreadTooThin">Play</string>
     <string name="btnTroubleMaker">Play</string>
 
+    <!-- for setting button text in code -->
     <string name="txtPause">Pause</string>
     <string name="txtPlay">Play</string>
 
-    <!--<string name="chkFiftyWays">Not Ranked Yet</string>
-    <string name="chkSabotage">Not Ranked Yet</string>
-    <string name="chkScreamAndShout">Not Ranked Yet</string>
-    <string name="chkSpreadTooThin">Not Ranked Yet</string>
-    <string name="chkTroubleMaker">Not Ranked Yet</string>
-    -->
-    <!--<string-array name="spnRank">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-    </string-array>
-    -->
-
-    <!-- <string name="txt_play_music">Play Music</string> -->
-
-    <!-- <string name="prompt">Click to Rank</string> -->
-
     <string name="btnNext">Click to Submit Ranking</string>
 
+    <!-- user error messages -->
     <string name="txtErrorSelectSpnr">\n\nPlease select a rank for each song</string>
     <string name="txtErrorDuplicateSpnr1">\n\nDuplicate ranking found: </string>
     <string name="txtErrorDuplicateSpnr2">\nPlease correct and resubmit by clicking button</string>

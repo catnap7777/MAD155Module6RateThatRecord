@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -101,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         Button btn1 = (Button) findViewById(R.id.btnNext);
 
         final TextView txtResults = (TextView) findViewById(R.id.textView1);
+        txtResults.setMovementMethod(new ScrollingMovementMethod());
 
         final String txtResultFiftyWays = getString(R.string.txtFiftyWays);
         final String txtResultSabotage = getString(R.string.txtSabotage);
@@ -135,11 +137,35 @@ public class MainActivity extends AppCompatActivity {
                 if(position == 0) {
                     tv.setTextColor(Color.WHITE);
                     tv.setBackgroundColor(Color.GRAY);
-                } else {
+                //} else {
+                    //tv.setTextColor(Color.BLACK);
+                    //..light blue
+                    //tv.setBackgroundColor(0xff8FDDFF);
+                } else if (position == 1){
+                    tv.setTextColor(Color.BLACK);
+                    //..light blue
+                    tv.setBackgroundColor(0xff9CB1FF);
+                } else if (position == 2){
+                    tv.setTextColor(Color.BLACK);
+                    //..light blue
+                    tv.setBackgroundColor(0xffAAD0FF);
+                } else if (position == 3){
                     tv.setTextColor(Color.BLACK);
                     //..light blue
                     tv.setBackgroundColor(0xff8FDDFF);
+                } else if (position == 4){
+                    tv.setTextColor(Color.BLACK);
+                    //..light blue
+                    tv.setBackgroundColor(0xff9CF9FF);
+                } else if (position == 5){
+                    tv.setTextColor(Color.BLACK);
+                    //..light blue
+                    tv.setBackgroundColor(0xffC1FFFF);
+                } else {
+                    tv.setTextColor(Color.WHITE);
+                    tv.setBackgroundColor(Color.BLACK);
                 }
+
                 return view;
             }
         };
